@@ -1,0 +1,23 @@
+{
+    "name": "davidvegacl/laravel-chile",
+    "description": "Regiones, Comunas y otros utilitarios para proyectos en Chile para Laravel",
+    "authors": [
+        {
+            "name": "David Vega",
+            "email": "david@izarus.cl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "DavidVegaCl\\LaravelChile\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DavidVegaCl\\LaravelChile\\LaravelChileServiceProvider"
+            ]
+        }
+    }
+}
