@@ -1,6 +1,6 @@
 {
     "name": "davidvegacl/laravel-chile",
-    "description": "Regiones, Comunas y otros utilitarios para proyectos en Chile para Laravel",
+    "description": "Rut, Regiones, Comunas y otros utilitarios para proyectos en Chile para Laravel",
     "authors": [
         {
             "name": "David Vega",
