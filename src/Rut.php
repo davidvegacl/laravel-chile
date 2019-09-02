@@ -190,7 +190,7 @@ class Rut
      */
     public static function validar($rut, $dv = null)
     {
-        if (empty($dv)) {
+        if ($dv===null) {
             list($rut, $dv) = self::separar($rut);
         }
         return ($dv == self::calcularVerificador($rut));
