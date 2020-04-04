@@ -101,10 +101,10 @@ class Rut
                 break;
             case static::FORMATO_RUT:
                 return $this->rut;
-                beak;
+                break;
             case static::FORMATO_COMPLETO:
             default:
-                return number_format($this->rut, 0, null, ".")."-".$this->dv;
+                return number_format((int)$this->rut, 0, null, ".")."-".$this->dv;
                 break;
         }
     }
@@ -116,7 +116,7 @@ class Rut
      */
     public function __toString()
     {
-        return $this->formatear();
+        return $this->formateado();
     }
 
     /**
@@ -153,6 +153,7 @@ class Rut
      */
     public static function separar($rut)
     {
+        $rut = self::limpiar($rut);
         return [substr($rut, 0, -1),(substr($rut, -1))];
     }
 
