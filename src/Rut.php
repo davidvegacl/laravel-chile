@@ -140,8 +140,7 @@ class Rut
      */
     public static function parse($rut)
     {
-        list($rut, $dv) = self::separar($rut);
-        return (new self($rut, $dv));
+        return (new self($rut));
     }
 
     
@@ -154,6 +153,7 @@ class Rut
     public static function separar($rut)
     {
         $rut = self::limpiar($rut);
+        $rut = str_replace('-','',$rut); 
         return [substr($rut, 0, -1),(substr($rut, -1))];
     }
 
