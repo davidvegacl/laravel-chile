@@ -10,7 +10,7 @@ class Provincia extends Model
 {
     public function __construct()
     {
-        $this->setTable(config('laravelchile.tabla_comunas'));
+        $this->setTable(config('laravelchile.tabla_provincias'));
         return parent::__construct();
     }
 

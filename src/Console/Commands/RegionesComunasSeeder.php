@@ -536,6 +536,7 @@ class RegionesComunasSeeder extends Command
             return [
                 'nombre' => $comuna[0],
                 'region_id' => $comuna[1],
+                'provincia_id' => $comuna[2],
                 'updated_at' => $now,
                 'created_at' => $now,
             ];
