@@ -4,9 +4,9 @@ namespace DavidVegaCl\LaravelChile\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DavidVegaCl\LaravelChile\Models\Region;
-use DavidVegaCl\LaravelChile\Models\Provincia;
+use DavidVegaCl\LaravelChile\Models\Comuna;
 
-class Comuna extends Model
+class Provincia extends Model
 {
     public function __construct()
     {
@@ -19,8 +19,8 @@ class Comuna extends Model
         return $this->belongsTo(Region::class,'region_id','id');
     }
 
-    public function provincia()
+    public function comunas()
     {
-        return $this->belongsTo(Provincia::class, 'provincia_id', 'id');
+        return $this->hasMany(Comuna::class, 'provincia_id', 'id');
     }
 }
