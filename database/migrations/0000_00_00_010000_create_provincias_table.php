@@ -13,14 +13,14 @@ class CreateRegionesTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable(config('laravelchile.tabla_regiones'))) {
-            Schema::create(config('laravelchile.tabla_regiones'), function (Blueprint $table) {
+        if (!Schema::hasTable(config('laravelchile.tabla_provincias'))) {
+            Schema::create(config('laravelchile.tabla_provincias'), function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('nombre');
-                $table->string('nombre_corto');
-                $table->string('sigla');
-                $table->integer('orden');
+                $table->bigInteger('region_id')->unsigned();
                 $table->timestamps();
+
+                $table->foreign('region_id')->references('id')->on(config('laravelchile.tabla_regiones'))->onDelete('CASCADE')->onUpdate('CASCADE');
             });
         }
     }
