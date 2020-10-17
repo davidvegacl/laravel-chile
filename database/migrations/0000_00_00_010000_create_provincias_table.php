@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRegionesTable extends Migration
+class CreateProvinciasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -32,6 +32,6 @@ class CreateRegionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('laravelchile.tabla_regiones'));
+        Schema::dropIfExists(config('laravelchile.tabla_provincias'));
     }
 }
