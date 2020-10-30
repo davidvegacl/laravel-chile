@@ -107,7 +107,7 @@ class RegionesComunasSeeder extends Command
     {
         $now = now();
 
-        $provinces = [
+        $provincias = [
             [1, 'Arica', 15],
             [2, 'Parinacota', 15],
             [3, 'Iquique', 1],
@@ -169,8 +169,8 @@ class RegionesComunasSeeder extends Command
         $provincias = array_map(function ($provincia) use ($now) {
             return [
                 'id' => $provincia[0],
-                'nombre' => $comuna[1],
-                'region_id' => $comuna[2],
+                'nombre' => $provincia[1],
+                'region_id' => $provincia[2],
                 'updated_at' => $now,
                 'created_at' => $now,
             ];
