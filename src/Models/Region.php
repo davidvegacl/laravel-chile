@@ -18,4 +18,9 @@ class Region extends Model
     {
         return $this->hasMany(Comuna::class,'region_id','id');
     }
+    
+    public function provincias()
+    {
+        return $this->hasMany(Provincia::class, 'region_id', 'id');
+    }
 }
