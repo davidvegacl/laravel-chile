@@ -164,7 +164,7 @@ class Rut
      */
     public static function limpiar($rut)
     {
-        return preg_replace('/[^0-9Kk\.\-]/','',$rut);
+        return preg_replace('/[^0-9Kk\-]/','',$rut);
     }
 
     /**
