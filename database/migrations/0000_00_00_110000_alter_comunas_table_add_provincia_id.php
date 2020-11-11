@@ -14,7 +14,7 @@ class AlterComunasTableAddProvinciaId extends Migration
     public function up()
     {
         Schema::table(config('laravelchile.tabla_comunas'), function (Blueprint $table) {
-            $table->bigInteger('provincia_id')->unsigned();
+            $table->bigInteger('provincia_id')->unsigned()->nullable();
 
             $table->foreign('provincia_id')->references('id')->on(config('laravelchile.tabla_provincias'))->onDelete('CASCADE')->onUpdate('CASCADE');
         });
