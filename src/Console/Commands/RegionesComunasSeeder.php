@@ -61,11 +61,33 @@ class RegionesComunasSeeder extends Command
         }
     }
 
+    public static function staticHandle() {
+        print_r("Laravel-Chile: Insertando datos Chile\n");
+        DB::beginTransaction();
+        try {
+            if (DB::table(config('laravelchile.tabla_regiones'))->count() == 0) {
+                static::insertRegiones();
+            }
+            if (DB::table(config('laravelchile.tabla_provincias'))->count() == 0) {
+                static::insertProvincias();
+            }
+            if (DB::table(config('laravelchile.tabla_comunas'))->count() == 0) {
+                static::insertComunas();
+            }
+
+            DB::commit();
+            print_r("Laravel-Chile: Datos insertados\n");
+        } catch (Exception $e) {
+            DB::rollback();
+            print_r('Laravel-Chile: Error insertando datos: '.$e->getMessage() . "\n");
+        }
+    }
+
 
     /**
      * Inserta las regiones
      */
-    private function insertRegiones()
+    private static function insertRegiones()
     {
         $now = \Carbon\Carbon::now();
         $regiones = [
@@ -103,7 +125,7 @@ class RegionesComunasSeeder extends Command
     /**
      * Inserta las provincias de las regiones
      */
-    private function insertProvincias()
+    private static function insertProvincias()
     {
         $now = now();
 
@@ -181,7 +203,7 @@ class RegionesComunasSeeder extends Command
     /**
      * Inserta las comunas de las regiones
      */
-    private function insertComunas()
+    private static function insertComunas()
     {
         $now = now();
         $comunas = [
