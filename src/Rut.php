@@ -194,6 +194,9 @@ class Rut
         if ($dv===null) {
             list($rut, $dv) = self::separar($rut);
         }
+        if (!is_numeric($rut) {
+            return false;
+        }
         return ($dv == self::calcularVerificador($rut));
     }
 
